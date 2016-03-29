@@ -11,7 +11,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup (
     name = 'github_pushbullet',
-    version = '0.0.1',
+    version = '0.0.2',
 
     author = 'taeguk',
     author_email = 'xornrbboy@gmail.com',
@@ -24,7 +24,7 @@ setup (
     packages=find_packages(),
     include_package_data = True,
 
-    install_requires = ['github_listener'],
+    install_requires = ['github_listener', 'pushbullet'],
     
     keywords = 'github notification push pushbullet',
 )
