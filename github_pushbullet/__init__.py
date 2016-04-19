@@ -18,7 +18,7 @@ class GithubPushbullet(object):
             for group in change.n_groups:
                 for n in group.notifications:
                     msg = u"Repo. : {0}\n".format(group.group_name)
-                    msg += u"Title : {0}\nLink : {1}\nPersons : {2}".format(n.title, n.link, n.persons)
+                    msg += u"Title : {0}\nLink : {1}\nPerson : {2}\nText : {3}".format(n.title, n.link, n.person, n.text)
                     push = pb.push_note(u"Github Pushbullet - Notification", msg)
         if sleep_sec is None:
             self.github_listener.run()
