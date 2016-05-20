@@ -3,6 +3,12 @@
 from setuptools import setup, find_packages
 from codecs import open
 from os import path
+import sys
+
+if sys.version_info.major < 3:
+    msg = "Sorry, Python 2 is not supported (yet)"
+    print >> sys.stderr, msg
+    sys.exit(1)
 
 here = path.abspath(path.dirname(__file__))
 
@@ -11,7 +17,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup (
     name = 'github_pushbullet',
-    version = '0.1.0',
+    version = '0.1.1',
 
     author = 'taeguk',
     author_email = 'xornrbboy@gmail.com',
@@ -26,5 +32,9 @@ setup (
 
     install_requires = ['github_listener', 'pushbullet.py'],
     
+    classifiers = [
+        'Programming Language :: Python :: 3 :: Only',
+    ],
+
     keywords = 'github notification push pushbullet',
 )
